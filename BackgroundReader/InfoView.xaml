@@ -1,0 +1,25 @@
+﻿<Window x:Class="BackgroundReader.InfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Anzeige" Height="383" Width="423" ShowInTaskbar="False" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="#00000000" Visibility="Visible">
+    <Grid>
+        <Rectangle Fill="#D200F9FF" Height="320" HorizontalAlignment="Right" Margin="0,0,16,12" Name="rectangle_hilfe" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Bottom" Width="380" Visibility="Hidden" />
+        <TextBox Height="320" HorizontalAlignment="Right" Margin="0,0,16,12" Name="textBox_hilfe" VerticalAlignment="Bottom" Width="360" Background="#00000000" Text="diahsdiashdashasdj" AcceptsReturn="True" AcceptsTab="True" Visibility="Hidden" BorderBrush="#00000000" FontSize="16" TextAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Black">
+            <TextBox.SelectionBrush>
+                <SolidColorBrush />
+            </TextBox.SelectionBrush>
+        </TextBox>
+
+        <Rectangle Fill="#9F0000FF" Height="33" HorizontalAlignment="Right" Margin="0,0,20,70" Name="rectangle_speed" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Bottom" Width="125" />
+        <Label Content="Speedlevel 0" Height="33" HorizontalAlignment="Right" Margin="0,0,20,70" Name="label_speed" VerticalAlignment="Bottom" FontSize="16" Width="115" Foreground="White" Visibility="Hidden" />
+
+        <Rectangle Fill="#9F0000FF" Height="100" HorizontalAlignment="Right" Margin="0,0,20,12" Name="rectangle_nr" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Bottom" Width="280" />
+        <Label FontSize="14"  Height="34" HorizontalAlignment="Right" Margin="0,0,20,78" Name="label_nr1" VerticalAlignment="Bottom" Width="280" HorizontalContentAlignment="Center" Foreground="White" Content="" Visibility="Hidden" />
+        <Label FontSize="18" FontWeight="Bold" Height="34" HorizontalAlignment="Right" Margin="0,0,20,44" Name="label_nr2" VerticalAlignment="Bottom" Width="280" HorizontalContentAlignment="Center" Foreground="White" Visibility="Hidden" />
+        <Label FontSize="14"  Height="34" HorizontalAlignment="Right" Margin="0,0,20,10" Name="label_nr3" VerticalAlignment="Bottom" Width="280" HorizontalContentAlignment="Center" Foreground="White" Visibility="Hidden" />
+        
+        <Rectangle Height="130" Margin="0,0,12,10" Name="rectangle_volumen" Stroke="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="49" RadiusX="20" RadiusY="20" Fill="#9F0000FF" />
+        <Label Content="0" Height="37" Margin="0,0,16,102" Name="label_volumen" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="16" Width="40" HorizontalContentAlignment="Center" Foreground="White" Visibility="Hidden" />
+        <Slider Height="100" HorizontalAlignment="Right" Interval="1" Margin="0,0,20,12" Maximum="100" Name="slider_volume" Value="90" VerticalAlignment="Bottom" Width="28" Orientation="Vertical" ValueChanged="Slider_volume_ValueChanged" Visibility="Hidden" />
+    </Grid>
+</Window>
