@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,7 +21,8 @@ namespace BackgroundReader
         public static void ToggleAutostart(bool enable, string? path, string? name)
         {
             var key = Registry.CurrentUser.OpenSubKey(path ?? registryPath, true);
-            string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string location = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string filePath = System.IO.Path.GetDirectoryName(location) + '\\' +System.IO.Path.GetFileNameWithoutExtension(location) + ".exe";
             string appName = name ?? GetAppName();
 
             if (key != null)
