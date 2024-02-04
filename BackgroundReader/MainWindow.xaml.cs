@@ -649,5 +649,14 @@ namespace BackgroundReader
             setting.startHidden = false;
             setting.Save();
         }
+
+        private void Button_hide_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("You can reveal the window with the keyboard shortcut:\nctrl + alt + m\nDo you want to continue?", "Hide window info", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            if (result == MessageBoxResult.Yes)
+            {
+                Visibility_window();
+            }
+        }
     }
 }

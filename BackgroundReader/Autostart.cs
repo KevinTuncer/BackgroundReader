@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace BackgroundReader
 {
@@ -13,17 +14,28 @@ namespace BackgroundReader
     {
         public const string registryPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
-        public static string GetAppName()
+        public static string? GetAppName(bool fileName = false)
         {
-            return System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            if(fileName)
+            {
+                return System.IO.Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0]);
+            } 
+            else
+            {
+                return System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
+            }
+        }
+
+        private static string? GetPath()
+        {
+            return System.IO.Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
         }
 
         public static void ToggleAutostart(bool enable, string? path, string? name)
         {
+            string appName = name ?? GetAppName() ?? "";
+            string filePath = GetPath() + '\\' + GetAppName(true) + ".exe";
             var key = Registry.CurrentUser.OpenSubKey(path ?? registryPath, true);
-            string location = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string filePath = System.IO.Path.GetDirectoryName(location) + '\\' +System.IO.Path.GetFileNameWithoutExtension(location) + ".exe";
-            string appName = name ?? GetAppName();
 
             if (key != null)
             {

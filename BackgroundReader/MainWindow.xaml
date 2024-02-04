@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Background Reader" Height="478" Width="615" Closing="Window_Closing" ShowInTaskbar="False" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Topmost="True" Visibility="Hidden">
+        Title="Background Reader" Height="478" Width="615" MinHeight="295" MinWidth="260"  Closing="Window_Closing" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Topmost="True" Visibility="Collapsed">
     <Grid>
         <TextBox Margin="10,10,242,40" Name="textBox_ReadContent"/>
 
         <Button Content="Read" Height="26" HorizontalAlignment="Right" Margin="0,10,165,0" x:Name="Button_read" VerticalAlignment="Top" Width="72" Click="Button_read_Click" Background="#FFA6E5F3" />
         <Button Content="Pause" Height="26" HorizontalAlignment="Right" Margin="0,10,87,0" x:Name="Button_pause" VerticalAlignment="Top" Width="72" Click="Button_pause_Click" Background="#FFFFBCAE" />
         <Button Content="■ Stop" Height="26" HorizontalAlignment="Right" Margin="0,10,10,0" x:Name="Button_stop" VerticalAlignment="Top" Width="72" Click="Button_stop_Click" />
-
+        <Button Content="Hide window" Height="26" Margin="0,0,12,69" x:Name="Button_hide" Click="Button_hide_Click" Background="White" HorizontalAlignment="Right" Width="81" VerticalAlignment="Bottom" />
         <Label Content="Volumen" Height="28" HorizontalAlignment="Right" Margin="0,0,31,20" VerticalAlignment="Bottom" Foreground="#FFC7C0C0" />
 
         <Label Content="Reading Speed" Foreground="#FFC7C0C0" Height="28" HorizontalAlignment="Right" Margin="0,42,75,0" VerticalAlignment="Top" />
