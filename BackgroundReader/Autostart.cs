@@ -26,7 +26,7 @@ namespace BackgroundReader
             }
         }
 
-        private static string? GetPath()
+        public static string? GetPath()
         {
             return System.IO.Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
         }

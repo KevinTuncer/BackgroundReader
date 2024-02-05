@@ -375,13 +375,32 @@ namespace BackgroundReader
             }
         }
 
+        private bool CheckRelativePathForFile(string file)
+        {
+            var path = Autostart.GetPath();
+            if (path != null)
+            {
+                path += "\\" + file;
+                if (System.IO.File.Exists(path))
+                {
+                    textBox_languageSelectorFilePath.Text = path;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void SetLanguageByText(string text)
         {
             // Only if the language selecto file is available 
             if (!System.IO.File.Exists(textBox_languageSelectorFilePath.Text))
             {
-                textBox_languageSelectorFilePath.BorderBrush = System.Windows.Media.Brushes.Red;
-                return;
+
+                if (!CheckRelativePathForFile("Core14.profile.xml"))
+                {
+                    textBox_languageSelectorFilePath.BorderBrush = System.Windows.Media.Brushes.Red;
+                    return;
+                }
             }
 
             textBox_languageSelectorFilePath.BorderBrush = System.Windows.Media.Brushes.Green;
